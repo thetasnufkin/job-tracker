@@ -2,16 +2,15 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
-// ↓↓↓ ここを自分のFirebaseの設定値に書き換えてください ↓↓↓
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDqHllOC_xuae77vqk1wONTiyAGYxzk_Ds",
-  authDomain: "jobtracker-a08a2.firebaseapp.com",
-  projectId: "jobtracker-a08a2",
-  storageBucket: "jobtracker-a08a2.firebasestorage.app",
-  messagingSenderId: "177796781964",
-  appId: "1:177796781964:web:6cfe68667d992d3f30a8a9"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
-// ↑↑↑↑↑↑
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
